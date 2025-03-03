@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
     const handleLogout = () => {
         localStorage.removeItem('token');
-        setIsLoggedIn(false); // Update state to reflect logout
-        window.location.reload(); // Refresh the page
+        setIsLoggedIn(false); 
+        window.location.reload(); 
     };
 
     return (

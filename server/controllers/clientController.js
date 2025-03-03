@@ -23,14 +23,14 @@ exports.updateClient = async (req, res) => {
 
 exports.getTopClients = async (req, res) => {
     try {
-        // Find the maximum TotalBill
+       
         const maxBillClient = await Client.findOne().sort({ TotalBill: -1 });
         const maxTotalBill = maxBillClient.TotalBill;
 
-        // Find all clients with the maximum TotalBill
+        
         const topClients = await Client.find({ TotalBill: maxTotalBill });
 
-        // Fetch Agency details for each client
+        
         const result = await Promise.all(topClients.map(async (client) => {
             const agency = await Agency.findOne({ AgencyId: client.AgencyId });
             return {

@@ -17,9 +17,9 @@ const Login = ({ setIsLoggedIn }) => {
         e.preventDefault();
         try {
             const response = await loginUser(formData);
-            localStorage.setItem('token', response.token); // Save token to localStorage
-            setIsLoggedIn(true); // Update state to reflect login
-            navigate('/'); // Redirect to home page
+            localStorage.setItem('token', response.token);
+            setIsLoggedIn(true); 
+            navigate('/'); 
         } catch (error) {
             alert(`Error: ${error.message}`);
         }

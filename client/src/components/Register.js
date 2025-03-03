@@ -16,9 +16,9 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await registerUser(formData); // Register the user
-            alert('Registration successful! Please log in.'); // Notify the user
-            navigate('/login'); // Redirect to the login page
+            await registerUser(formData); 
+            alert('Registration successful! Please log in.'); 
+            navigate('/login'); 
         } catch (error) {
             alert(`Error: ${error.message}`);
         }
